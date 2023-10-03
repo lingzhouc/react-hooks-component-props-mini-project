@@ -1,6 +1,6 @@
 import React from "react";
 import blogData from "../data/blog";
-
+import Article from "./Article"
 function ArticleList() {
     // const least = blogData.posts.map(element => {
     //     return (<article key={element.id}> {element} </article>)
@@ -10,11 +10,13 @@ function ArticleList() {
     return (
         <main>
             {
-                blogData.posts.map((element) => {
-                    return (<article key={element.id} posts={element}> </article>)
+                blogData.posts.map((element,i) => {
+                    return (<article key={element.id} posts={element}> <Article title={element.title}
+                         date={element.date}
+                         preview = {element.preview}/></article>)
                 })
             }
-            <p>awdlkawndlanwlfanw</p>            
+
         </main>
     )
 }
